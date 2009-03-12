@@ -2,13 +2,15 @@
 from __future__ import division
 
 """
-_optparse: add an optparse action to load an option from a file, to
-           add to dicts, and a type for slices
+optplus: some additional optparse features
+
+add an optparse action to load an option from a file, to add to dicts,
+and a type for slices
 """
 
 __version__ = "$Revision$"
 
-# Copyright 2007 Michael M. Hoffman <hoffman+software@ebi.ac.uk>
+# Copyright 2007-2009 Michael M. Hoffman <hoffman+software@ebi.ac.uk>
 
 from collections import defaultdict
 from optparse import (Option as _Option, OptionError,
