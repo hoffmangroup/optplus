@@ -5,7 +5,7 @@
 I hope these can be contributed to optparse someday.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Copyright 2009 Michael M. Hoffman <mmh1@washington.edu>
 
