@@ -18,6 +18,7 @@ from optparse import (Option as _Option, OptionError,
                       OptionParser as _OptionParser, OptionValueError)
 import sys
 
+# XXX: replace with itertools.repeat().next, see segway._utils.constant
 def _constant(constant):
     def _constant_inner():
         return constant
@@ -50,18 +51,20 @@ def optional_arg_callback(option, opt_str, value, parser):
 
     setattr(parser.values, option.dest, value)
 
+def str2slice_or_int(text):
+    args = [int(x) if x else None for x in text.split(":")]
+
+    if len(args) == 1:
+        return args[0]
+    else:
+        return slice(*args)
+
 def check_slice(option, opt, value):
     """
     returns an int or slice
     """
     try:
-        args = [int(x) if x else None for x in value.split(":")]
-
-        if len(args) == 1:
-            return args[0]
-        else:
-            return slice(*args)
-
+        return str2slice_or_int(value)
     except ValueError:
         message = "option %s: invalid slice value: %r" % (opt, value)
         raise OptionValueError(message)
