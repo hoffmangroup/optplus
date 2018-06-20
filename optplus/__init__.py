@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from __future__ import division
+from __future__ import absolute_import, division
 
 """
 optplus: some additional optparse features
@@ -8,7 +8,6 @@ add an optparse action to load an option from a file, to add to dicts,
 and a type for slices
 """
 
-from __future__ import absolute_import
 __version__ = "$Revision$"
 
 # Copyright 2007-2009 Michael M. Hoffman <hoffman+software@ebi.ac.uk>
