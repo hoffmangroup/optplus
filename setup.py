@@ -5,12 +5,10 @@
 I hope these can be contributed to optparse someday.
 """
 
+from __future__ import absolute_import
 __version__ = "0.1.2"
 
 # Copyright 2009 Michael M. Hoffman <mmh1@washington.edu>
-
-from ez_setup import use_setuptools
-use_setuptools()
 
 from setuptools import find_packages, setup
 
